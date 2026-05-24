@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 
-<title>XAUFX — Institutional Gold Intelligence</title>
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>XAUFX</title>
 
 <style>
 
@@ -16,80 +21,84 @@ box-sizing:border-box;
 body{
 
 background:
-radial-gradient(circle at top,#221700,#060606 30%,#000 100%);
-
-color:white;
+radial-gradient(
+circle at top,
+#2b1d00,
+#090909 35%,
+#000
+);
 
 font-family:
 Inter,
 Arial;
 
+color:white;
+
 overflow:hidden;
 
 height:100vh;
 
-position:relative;
-
 }
 
-/* GOLD GLOW */
-
-body::before{
-
-content:"";
+.glow{
 
 position:absolute;
 
-top:-300px;
+width:900px;
+
+height:900px;
+
 left:50%;
 
-transform:translateX(-50%);
+top:-400px;
 
-width:1000px;
-height:1000px;
+transform:translateX(-50%);
 
 background:
 
 radial-gradient(
 circle,
-rgba(255,210,90,.16),
-transparent 60%
+rgba(255,210,70,.18),
+transparent
 );
 
-animation:
-float 8s ease infinite;
+filter:blur(100px);
 
 }
 
-@keyframes float{
-
-0%{
-transform:
-translateX(-50%)
-translateY(0);
-}
-
-50%{
-transform:
-translateX(-50%)
-translateY(40px);
-}
-
-100%{
-transform:
-translateX(-50%)
-translateY(0);
-}
-
-}
-
-.container{
-
-position:relative;
-
-z-index:5;
+.hero{
 
 height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+}
+
+.card{
+
+width:min(1200px,95vw);
+
+height:min(90vh,900px);
+
+border:
+
+1px solid
+rgba(255,220,120,.08);
+
+background:
+
+rgba(255,255,255,.02);
+
+backdrop-filter:
+blur(40px);
+
+border-radius:40px;
 
 display:flex;
 
@@ -101,52 +110,43 @@ align-items:center;
 
 text-align:center;
 
-padding:40px;
+padding:50px;
+
+box-shadow:
+
+0 0 120px
+rgba(255,210,50,.08);
 
 }
 
 .logo{
 
-font-size:90px;
+font-size:60px;
 
-margin-bottom:18px;
-
-animation:
-pulse 4s infinite;
-
-}
-
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.05);
-}
-
-100%{
-transform:scale(1);
-}
+margin-bottom:10px;
 
 }
 
 .brand{
 
-font-size:110px;
+font-size:
+
+clamp(
+60px,
+10vw,
+120px
+);
 
 font-weight:900;
 
-letter-spacing:8px;
+letter-spacing:10px;
 
 background:
 
 linear-gradient(
 90deg,
-white,
-#f3d56a,
-#b78628
+#fff,
+#f4d25c
 );
 
 -webkit-background-clip:text;
@@ -157,107 +157,128 @@ white,
 
 .title{
 
-margin-top:18px;
+margin-top:20px;
 
-font-size:62px;
+font-size:
+
+clamp(
+28px,
+4vw,
+58px
+);
+
+line-height:1.15;
 
 font-weight:800;
 
-max-width:1300px;
-
-line-height:1.1;
+max-width:1000px;
 
 }
 
-.subtitle{
+.gold{
 
-margin-top:35px;
-
-font-size:28px;
-
-color:#d7d7d7;
-
-max-width:1100px;
-
-line-height:1.9;
+color:#f4d25c;
 
 }
 
-.highlight{
+.desc{
 
-color:#f3d56a;
+margin-top:30px;
+
+font-size:
+
+clamp(
+16px,
+1.5vw,
+24px
+);
+
+max-width:900px;
+
+line-height:1.8;
+
+color:#bfbfbf;
 
 }
 
-.stats{
-
-margin-top:70px;
+.row{
 
 display:flex;
 
-gap:100px;
+gap:24px;
+
+margin-top:55px;
+
+flex-wrap:wrap;
+
+justify-content:center;
 
 }
 
-.card{
+.box{
 
-padding:30px;
+width:220px;
 
-min-width:220px;
+padding:32px;
+
+border-radius:26px;
 
 background:
 
-rgba(255,255,255,.03);
-
-backdrop-filter:blur(20px);
+linear-gradient(
+180deg,
+rgba(255,255,255,.03),
+rgba(255,255,255,.01)
+);
 
 border:
 
-1px solid rgba(255,220,120,.15);
-
-border-radius:28px;
+1px solid
+rgba(255,220,120,.08);
 
 transition:.4s;
 
 }
 
-.card:hover{
+.box:hover{
 
 transform:
-translateY(-10px);
+
+translateY(-8px);
 
 box-shadow:
 
-0 0 60px rgba(255,200,50,.2);
+0 0 60px
+rgba(255,210,70,.18);
 
 }
 
-.value{
+.num{
 
-font-size:48px;
+font-size:46px;
 
 font-weight:900;
 
-color:#f3d56a;
+color:#f4d25c;
 
 }
 
-.label{
+.text{
 
-margin-top:10px;
+margin-top:8px;
 
-color:#cfcfcf;
+color:#bbb;
 
 }
 
-.button{
+button{
 
-margin-top:80px;
+margin-top:60px;
 
 padding:
 
-28px
-110px;
+24px
+90px;
 
 border:none;
 
@@ -265,7 +286,7 @@ border-radius:999px;
 
 cursor:pointer;
 
-font-size:28px;
+font-size:22px;
 
 font-weight:900;
 
@@ -274,43 +295,58 @@ background:
 linear-gradient(
 90deg,
 white,
-#f4d15a
+#f4d25c
 );
 
-transition:.4s;
+transition:.35s;
 
 }
 
-.button:hover{
+button:hover{
 
 transform:
 
-translateY(-6px)
+translateY(-5px)
 scale(1.03);
 
 box-shadow:
 
-0 0 120px rgba(255,210,80,.5);
+0 0 90px
+rgba(255,210,70,.5);
 
 }
 
-.note{
+.small{
 
-margin-top:30px;
+margin-top:22px;
 
-color:#8b8b8b;
-
-font-size:15px;
-
-}
-
-.footer{
-
-position:absolute;
-
-bottom:40px;
+font-size:13px;
 
 color:#666;
+
+}
+
+@media(max-width:900px){
+
+body{
+
+overflow:auto;
+
+}
+
+.hero{
+
+height:auto;
+
+padding:20px;
+
+}
+
+.card{
+
+height:auto;
+
+}
 
 }
 
@@ -320,7 +356,11 @@ color:#666;
 
 <body>
 
-<div class="container">
+<div class="glow"></div>
+
+<section class="hero">
+
+<div class="card">
 
 <div class="logo">
 🚀
@@ -333,58 +373,72 @@ XAUFX
 <div class="title">
 
 Professional
-<span class="highlight">
+
+<span class="gold">
+
 XAU/USD
+
 </span>
 
 Intelligence Platform
 
 </div>
 
-<div class="subtitle">
+<div class="desc">
 
-Institutional-grade market intelligence designed to help traders explore opportunities with more structure, clarity, and discipline.
+Institutional-grade intelligence for disciplined market exploration.
 
-No hype.
-No shortcuts.
-Just better decisions.
+Built to help traders analyze opportunities —
+not promise outcomes.
 
 </div>
 
-<div class="stats">
+<div class="row">
 
-<div class="card">
+<div class="box">
 
-<div class="value">
+<div class="num">
 AI
 </div>
 
-<div class="label">
+<div class="text">
 Signal Engine
 </div>
 
 </div>
 
-<div class="card">
+<div class="box">
 
-<div class="value">
+<div class="num">
 24/7
 </div>
 
-<div class="label">
+<div class="text">
 Market Monitoring
 </div>
 
 </div>
 
-<div class="card">
+<div class="box">
 
-<div class="value">
+<div class="num">
 LIVE
 </div>
 
-<div class="label">
+<div class="text">
 Intelligence Layer
+</div>
+
+</div>
+
+<div class="box">
+
+<div class="num">
+PRO
+</div>
+
+<div class="text">
+Institutional Design
 </div>
 
 </div>
@@ -392,30 +446,22 @@ Intelligence Layer
 </div>
 
 <button
-
-class="button"
-
-onclick="window.location.href='dashboard.html'"
-
->
+onclick="window.location.href='dashboard.html'">
 
 ENTER PLATFORM
 
 </button>
 
-<div class="note">
+<div class="small">
 
-Trading involves risk. XAUFX provides intelligence tools and does not guarantee outcomes.
-
-</div>
-
-<div class="footer">
-
-© 2026 XAUFX • Built for serious traders
+XAUFX provides analytics and intelligence tools.
+Trading carries risk.
 
 </div>
 
 </div>
+
+</section>
 
 </body>
 

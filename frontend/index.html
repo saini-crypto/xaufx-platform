@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta charset="UTF-8">
 
 <title>XAUFX — Institutional Gold Intelligence</title>
@@ -18,7 +16,7 @@ box-sizing:border-box;
 body{
 
 background:
-radial-gradient(circle at top,#161616,#050505);
+radial-gradient(circle at top,#221700,#060606 30%,#000 100%);
 
 color:white;
 
@@ -26,13 +24,70 @@ font-family:
 Inter,
 Arial;
 
+overflow:hidden;
+
 height:100vh;
 
-overflow:hidden;
+position:relative;
+
+}
+
+/* GOLD GLOW */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+top:-300px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:1000px;
+height:1000px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,210,90,.16),
+transparent 60%
+);
+
+animation:
+float 8s ease infinite;
+
+}
+
+@keyframes float{
+
+0%{
+transform:
+translateX(-50%)
+translateY(0);
+}
+
+50%{
+transform:
+translateX(-50%)
+translateY(40px);
+}
+
+100%{
+transform:
+translateX(-50%)
+translateY(0);
+}
 
 }
 
 .container{
+
+position:relative;
+
+z-index:5;
 
 height:100vh;
 
@@ -46,29 +101,52 @@ align-items:center;
 
 text-align:center;
 
+padding:40px;
+
 }
 
 .logo{
 
-font-size:80px;
+font-size:90px;
 
-margin-bottom:20px;
+margin-bottom:18px;
+
+animation:
+pulse 4s infinite;
 
 }
 
-.title{
+@keyframes pulse{
 
-font-size:72px;
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.brand{
+
+font-size:110px;
 
 font-weight:900;
 
-letter-spacing:5px;
+letter-spacing:8px;
 
 background:
+
 linear-gradient(
 90deg,
 white,
-#d4af37
+#f3d56a,
+#b78628
 );
 
 -webkit-background-clip:text;
@@ -77,75 +155,109 @@ white,
 
 }
 
-.subtitle{
+.title{
 
-margin-top:20px;
+margin-top:18px;
 
-font-size:34px;
+font-size:62px;
 
-font-weight:700;
+font-weight:800;
 
-max-width:1000px;
+max-width:1300px;
 
-line-height:1.4;
+line-height:1.1;
 
 }
 
-.text{
+.subtitle{
 
-margin-top:30px;
+margin-top:35px;
 
-font-size:20px;
+font-size:28px;
 
-color:#aaaaaa;
+color:#d7d7d7;
 
-max-width:800px;
+max-width:1100px;
 
-line-height:2;
+line-height:1.9;
+
+}
+
+.highlight{
+
+color:#f3d56a;
 
 }
 
 .stats{
 
+margin-top:70px;
+
 display:flex;
 
 gap:100px;
-
-margin-top:60px;
 
 }
 
 .card{
 
-text-align:center;
+padding:30px;
+
+min-width:220px;
+
+background:
+
+rgba(255,255,255,.03);
+
+backdrop-filter:blur(20px);
+
+border:
+
+1px solid rgba(255,220,120,.15);
+
+border-radius:28px;
+
+transition:.4s;
 
 }
 
-.number{
+.card:hover{
 
-font-size:40px;
+transform:
+translateY(-10px);
 
-color:#d4af37;
+box-shadow:
+
+0 0 60px rgba(255,200,50,.2);
+
+}
+
+.value{
+
+font-size:48px;
 
 font-weight:900;
+
+color:#f3d56a;
 
 }
 
 .label{
 
-color:#888;
-
 margin-top:10px;
+
+color:#cfcfcf;
 
 }
 
-button{
+.button{
 
-margin-top:70px;
+margin-top:80px;
 
-padding:20px 70px;
+padding:
 
-font-size:20px;
+28px
+110px;
 
 border:none;
 
@@ -153,23 +265,42 @@ border-radius:999px;
 
 cursor:pointer;
 
+font-size:28px;
+
+font-weight:900;
+
 background:
 
 linear-gradient(
 90deg,
-#ffffff,
-#d4af37
+white,
+#f4d15a
 );
 
-font-weight:800;
-
-transition:.3s;
+transition:.4s;
 
 }
 
-button:hover{
+.button:hover{
 
-transform:scale(1.08);
+transform:
+
+translateY(-6px)
+scale(1.03);
+
+box-shadow:
+
+0 0 120px rgba(255,210,80,.5);
+
+}
+
+.note{
+
+margin-top:30px;
+
+color:#8b8b8b;
+
+font-size:15px;
 
 }
 
@@ -195,23 +326,28 @@ color:#666;
 🚀
 </div>
 
+<div class="brand">
+XAUFX
+</div>
+
 <div class="title">
 
-XAUFX
+Professional
+<span class="highlight">
+XAU/USD
+</span>
+
+Intelligence Platform
 
 </div>
 
 <div class="subtitle">
 
-Professional XAU/USD Intraday Intelligence Platform
+Institutional-grade market intelligence designed to help traders explore opportunities with more structure, clarity, and discipline.
 
-</div>
-
-<div class="text">
-
-AI-driven institutional-grade market intelligence.
-
-Built to transform precision trading into scalable wealth creation.
+No hype.
+No shortcuts.
+Just better decisions.
 
 </div>
 
@@ -219,46 +355,36 @@ Built to transform precision trading into scalable wealth creation.
 
 <div class="card">
 
-<div class="number">
-99.2%
+<div class="value">
+AI
 </div>
 
 <div class="label">
-
-Signal Accuracy
-
+Signal Engine
 </div>
 
 </div>
 
 <div class="card">
 
-<div class="number">
-
+<div class="value">
 24/7
-
 </div>
 
 <div class="label">
-
-AI Monitoring
-
+Market Monitoring
 </div>
 
 </div>
 
 <div class="card">
 
-<div class="number">
-
-$1B+
-
+<div class="value">
+LIVE
 </div>
 
 <div class="label">
-
-Vision
-
+Intelligence Layer
 </div>
 
 </div>
@@ -266,16 +392,26 @@ Vision
 </div>
 
 <button
-onclick="window.location='dashboard.html'"
+
+class="button"
+
+onclick="window.location.href='dashboard.html'"
+
 >
 
 ENTER PLATFORM
 
 </button>
 
+<div class="note">
+
+Trading involves risk. XAUFX provides intelligence tools and does not guarantee outcomes.
+
+</div>
+
 <div class="footer">
 
-© 2026 XAUFX • Institutional Intelligence
+© 2026 XAUFX • Built for serious traders
 
 </div>
 
